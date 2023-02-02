@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles/stylesGral.css">
+  <link rel="stylesheet" href="styles/stylesMobile.css">
+  <title>Progress</title>
+</head>
+<body>
+  
+
+  <div class="app">
+    <header>
+      <!-- EDITABLE -->
+      <h1 class="header">Day <span>32</span> / 365</h1>
+      <!-- EDITABLE -->
+      <progress class="yearProgress" id="yearProgress" max="365" value="32"></progress>
+      <p class="quote">quote</p>
+    </header>
+    <main>
+      
+      <aside>
+        
+        <div class="currentClass">
+          <h2 class="currentLevel">CURRENT LEVEL</h2>
+          <!-- EDITABLE -->
+          <span class="englishLevel"></span>        
+          <!-- EDITABLE -->
+          <progress class="classProgress" id="classProgress" max="365" value="48"></progress>
+          <p class="percentaje">43%</p> 
+          <!-- EDITABLE -->
+          
+        </div>
+
+        <div class="videosStadistics">
+          <div class="cantVideos">
+            <h3>Videos Viewed</h3>
+            <!-- EDITABLE -->
+            <p><span>46</span> / 195</p>
+          </div>
+          <div class="duration">
+            <h3>Time Invested</h3>
+            <!-- EDITABLE -->
+            <p><span>47</span> Hours</p>
+          </div>
+        </div>
+        
+        <div class="watch">
+          <div>
+            <h3>WATCH</h3>
+            <h3>TODAY</h3>
+          </div>
+          <div class="numbers">
+            <!-- EDITABLE -->
+            <p>120</p>
+            <p>121</p>
+          </div>
+        </div>
+
+        <div class="reviews">
+          <!-- EDITABLE -->
+          <h3>Weekly Review</h3>
+          <!-- <h3>Monthly Review</h3> -->
+        </div>
+      </aside>
+
+      <section>
+        <div class="guide">
+          <div>
+            <div class="today">
+              <input type="checkbox" id="today" checked>
+              <label for="today" >Today</label>
+            </div>
+            <div class="progressDays">
+              <input type="checkbox" id="progressDays" checked>
+              <label for="progressDays">Progress Days</label>
+            </div>
+          </div>
+          <div>
+            <div class="weeklyReview">
+              <input type="checkbox" id="weeklyReview" checked>
+              <label for="weeklyReview">Weekly Review</label>
+            </div>
+            <div class="monthlyReview">
+              <input type="checkbox" id="monthlyReview" checked>
+              <label for="monthlyReview">Monthly Review</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="calendar">
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+
+
+  <script src="scripts/main.js" type="module"></script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+
+
+
+Día 28/365
+Cuenta de videos/faltan
+Calendario marcando
+Barra de progreso
+Cantidad de horas invertidas
+-----------------
+	
+
+
+Se imprimen los meses uno a uno en un tiempo breve
+Se marcan los días ya dados uno a uno en un tiempo (2 segundos) que se dividirá entre los días ya pasados
+
+
+
+
+
+
+
+let actualDay = new date = getDate();
+
+
+
+
+
