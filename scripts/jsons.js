@@ -828,7 +828,7 @@ export let monthsDays = [
     },
     {
         name: "February",
-        days: 29
+        days: 28
     },
     {
         name: "March",

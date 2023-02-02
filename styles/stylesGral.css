@@ -8,21 +8,26 @@
     }
 
     .app {
-        /* VARIABLES */
+        font-family: monospace;
+        font-size: var(--font-size);
+        font-weight: 500;
+
+        /* -----------------------------*/
+        /*              VARS            */
+        /* -----------------------------*/
         --font-size: 1.01em;
 
         /* MARK DAYS */
         --markToday: rgb(22, 173, 184);
         --markProgress: rgb(234, 201, 70);
-
-        font-family: monospace;
-        font-size: var(--font-size);
-        font-weight: 500;
+        --markNextWeekReview: rgb(150, 106, 150);
+        --markPreviousMonthReview: #e66e6e;
     }
 
+    /* ------------------------------------------------------------------------- */
+    /*                              GENERAL LAYOUT                               */
+
     header {
-        /* color: #550303; */
-        /* background-color: #F8EAD8; */
         background-color: #f3a188;
         height: 20vh;
 
@@ -34,10 +39,7 @@
         align-items: center;
     }
 
-    
-
     main {
-        /* background-color: blueviolet; */
         height: 80vh;
 
         display: flex;
@@ -56,31 +58,30 @@
         justify-content: flex-start;
         align-items: center;
 
-        /* background-color: #E8E2E2; */
-        background-color: #E1D7C6
+        background-color: #e1d7c6;
     }
 
     main section {
         width: 82%;
         height: 80vh;
 
-        background-color: #FFFBF5;
+        background-color: #fffbf5;
     }
 
+    /* ------------------------------------------------------------------------- */
+    /*                                  LAYOUTS                                  */
 
-    /* HEADER */
-    .header{
+    /* --------------------------------- HEADER */
+
+    .header {
         font-family: "Times New Roman", Times, serif;
         font-size: 2.8em;
 
         margin-top: 10px;
-        
-        -webkit-text-stroke: 1px black;
-    }
 
-    .header span{
-        /* text-decoration: underline; */
-        /* color: #b34827; */
+        -webkit-text-stroke: 0.5px #b22727;
+        color: black;
+        font-weight: 600;
     }
 
     .yearProgress {
@@ -89,7 +90,7 @@
     }
 
     .quote {
-        font-family: 'Times New Roman', Times, serif;
+        font-family: "Times New Roman", Times, serif;
         font-size: 0.9em;
 
         display: flex;
@@ -97,8 +98,11 @@
         align-items: center;
     }
 
+    /* --------------------------------- ASIDE */
 
-    /* ASIDE */
+    /* -----------------------------*/
+    /*          ENGLISH LEVEL       */
+    /* -----------------------------*/
     .currentClass {
         display: flex;
         flex-flow: column wrap;
@@ -111,15 +115,17 @@
         padding: 10px;
     }
 
-    .currentLevel  {
-        font-family: Georgia, 'Times New Roman', Times, serif;
-        font-weight: 400;
-        font-size: 1.3em;
+    .currentClass .currentLevel {
+        font-family: Georgia, "Times New Roman", Times, serif;
         margin-bottom: 5px;
-        
+
+        font-weight: 500;
+        font-size: 1.3em;
+        -webkit-text-stroke: 0.5px #b22727;
+        color: #d74b4b;
     }
 
-    .englishLevel {
+    .currentClass .englishLevel {
         font-family: monospace;
         font-size: 1.4em;
         font-weight: 400;
@@ -131,22 +137,22 @@
         text-align: center;
         border-radius: 8px;
         border: 2px solid #b98100;
-        background-color: #FFB100; 
+        background-color: #ffb100;
     }
 
-    .classProgress {
+    .currentClass .classProgress {
         margin-top: 5px;
         width: 80%;
     }
-    
-    .percentaje {
+
+    .currentClass .percentaje {
         position: relative;
         top: -3px;
     }
 
-
-
-
+    /* -----------------------------*/
+    /*        VIDEO STADISTICS      */
+    /* -----------------------------*/
     .videosStadistics {
         display: flex;
         flex-flow: column wrap;
@@ -171,17 +177,21 @@
     }
 
     .videosStadistics h3 {
-        font-family: Georgia, 'Times New Roman', Times, serif;
+        font-family: Georgia, "Times New Roman", Times, serif;
         font-weight: 400;
         font-size: 1em;
         margin: 5px;
+
+        -webkit-text-stroke: 1.2px #5f4017;
     }
 
-    .cantVideos, .duration {
+    .cantVideos,
+    .duration {
         margin: 8px;
     }
 
-    .cantVideos p, .duration p {
+    .cantVideos p,
+    .duration p {
         font-family: monospace;
         font-size: 1.2em;
         font-weight: lighter;
@@ -192,19 +202,19 @@
 
         text-align: center;
         border-radius: 8px;
-        background-color: #FFB100; */
+        background-color: #ffb100;
     }
 
     .cantVideos p {
-        background-color: #2cc8bb; */
+        background-color: #2cc8bb;
     }
     .duration p {
-        background-color: #e25cca; */
+        background-color: #e25cca;
     }
 
-
-
-
+    /* -----------------------------*/
+    /*             WATCH            */
+    /* -----------------------------*/
     .watch {
         display: flex;
         flex-flow: row wrap;
@@ -219,32 +229,43 @@
         width: 190px;
         height: 80px;
 
-        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
         font-weight: 100;
         font-size: 1em;
     }
 
-
-    .numbers{ 
+    .watch .numbers {
         display: flex;
         flex-flow: row wrap;
-        background-color: #e25cca;
     }
-    .numbers p{ 
+
+    .watch h3 {
+        font-weight: 200;
+        -webkit-text-stroke: 1px #5e2c1e;
+    }
+
+    .watch .numbers p {
         font-family: monospace;
         font-weight: 300;
         font-size: 1.2em;
+
         border: 2px solid black;
         border-radius: 5px;
         background-color: #cbc2b3;
-        padding: 2px;
+        width: 35px;
+        height: 35px;
         margin-left: 3px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
-
-
-
+    /* -----------------------------*/
+    /*            REVIEWS           */
+    /* -----------------------------*/
     .reviews {
+        display: flex;
         flex-flow: column wrap;
         justify-content: center;
         align-items: center;
@@ -253,10 +274,14 @@
         border: 2px solid #f23b3b;
         border-radius: 5px;
 
-        padding: 2px 5px ;
+        padding: 2px 5px;
     }
 
-    /* SECTION */
+    /* --------------------------------- SECTION */
+
+    /* -----------------------------*/
+    /*              GUIDE           */
+    /* -----------------------------*/
     .guide {
         display: flex;
         flex-flow: row wrap;
@@ -266,24 +291,43 @@
         margin-bottom: 10px;
         margin-right: 30px;
 
-        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+            sans-serif;
         font-weight: lighter;
         font-size: 0.8em;
     }
 
-    .today, .progressDays, .weeklyReview, .monthlyReview{
-        /* padding: 1px; */
-        /* height: ; */
+    .today,
+    .progressDays,
+    .weeklyReview,
+    .monthlyReview {
         margin-left: 30px;
         margin-bottom: 5px;
-        /* border-radius: 10px; */
     }
-    .today label { background-color: var(--markToday); padding: 3px;}
-    .progressDays label { background-color: var(--markProgress); padding: 3px;}
-    .weeklyReview label { background-color: rgb(200, 107, 40); padding: 3px;}
-    .monthlyReview label { background-color: rgb(40, 53, 200); padding: 3px;}
 
+    .today label,
+    .progressDays label,
+    .weeklyReview label,
+    .monthlyReview label {
+        padding: 3px;
+    }
 
+    .today label {
+        background-color: var(--markToday);
+    }
+    .progressDays label {
+        background-color: var(--markProgress);
+    }
+    .weeklyReview label {
+        background-color: rgb(195, 140, 195);
+    }
+    .monthlyReview label {
+        background-color: var(--markPreviousMonthReview);
+    }
+
+    /* -----------------------------*/
+    /*            CALENDAR          */
+    /* -----------------------------*/
     .calendar {
         display: flex;
         flex-flow: row wrap;
@@ -303,6 +347,8 @@
 
     table td {
         padding: 5px;
+        width: 25px;
+        height: 25px;
     }
 
     caption {
@@ -316,9 +362,15 @@
         color: rgb(150, 150, 150);
     }
 
+    /* ------------------------------------------------------------------------- */
+    /*                               CUSTOM STYLES                               */
+    /* ------------------------------------------------------------------------- */
 
+    /* -----------------------------*/
+    /*           SCROLLBAR          */
+    /* -----------------------------*/
 
-
+    /*  */
     /* CUSTOM SCROLL BAR */
     .calendar::-webkit-scrollbar {
         width: 12px; /* Tamaño del scroll en vertical */
@@ -354,31 +406,71 @@
         background: #d4d4d4;
     }
 
+    /* ------------------------------------------------------------------------- */
+    /*                              CUSTOM JS CLASES                             */
+    /* ------------------------------------------------------------------------- */
 
+    /* -----------------------------*/
+    /*             HIDE             */
+    /* -----------------------------*/
+    .Hide {
+        display: none;
+    }
 
+    /* -----------------------------*/
+    /*        MARK DAYS FILTER      */
+    /* -----------------------------*/
 
-
-
-
-    /* MARK DAYS */
     .markToday {
         background-color: var(--markToday);
-        border-radius: 5px;
+        border-radius: 15px;
+    }
+    .markTodayEndMonth {
+        background-color: var(--markToday);
+        border: 2px solid var(--markPreviousMonthReview);
+        border-radius: 15px;
     }
     .markProgress {
         background-color: var(--markProgress);
         border-radius: 2px;
     }
 
-
-
-
-    /* BEGING - END [LEVELS] */
-    .basicLevel {
-        border: 1.8px solid black;
-        border-radius: 5px;
+    /* PREVIOUS */
+    .previousWeekReviews {
+        
+        
+        color: #fff;
+    }
+    .previousMonthReviews {
+        background-color: rgb(150, 106, 150);
     }
 
+    /* NEXT */
+    .nextWeekReviews {
+        /* background-color: rgb(75, 43, 75); */
+        /* background-color: var(--markNextWeekReview); */
+        
+        border: 2px solid var(--markNextWeekReview);
+
+        border-radius: 4px;
+        padding: 4px;
+    }
+    .nextMonthReviews {
+        /* border: 2px solid rgb(69, 44, 44); */
+        /* border-radius: 4px; */
+        background-color: var(--markPreviousMonthReview);
+        color: #fff;
+        /* padding: 4px; */
+    }
+
+    /* ENGLISH LEVELS */
+    /* BEGING - END [LEVELS] */
+    .basicLevelBegin {
+        padding: 4px; 
+        border: 2px solid rgb(255, 136, 17);
+    }
+    .basicLevelFinish {
+        padding: 4px;
+        border: 3px solid rgb(255, 136, 17);
+    }
 }
-
-

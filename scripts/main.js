@@ -49,17 +49,17 @@ monthsDays.forEach((month, indexMonth) => {
     // TBODY
     let contAuxDaysMonth = 1;
 
-    while(contAuxDaysMonth <= month.days) {
+    while (contAuxDaysMonth <= month.days) {
         let tbody_Row = document.createElement('tr');
         let tbody_Row_TD;
 
         weekAbbreviation.forEach((weekDay, index) => {
-            if(contAuxDaysMonth <= month.days){
+            if (contAuxDaysMonth <= month.days) {
                 tbody_Row_TD = document.createElement('td');
                 if (weekDay == weekDayGuide) {
                     tbody_Row_TD.textContent = contAuxDaysMonth;
                     contAuxDaysMonth++;
-    
+
                     if (weekDayGuide == 'SUNDAY') {
                         weekDayGuide = 'MONDAY';
                     } else {
@@ -95,30 +95,35 @@ let monthCaption = Array.from(document.querySelectorAll('caption'))[date.getMont
 let tbodyTemp = Array.from(monthCaption.nextElementSibling.nextElementSibling.children);
 console.log(tbodyTemp);
 
-tbodyTemp.forEach((TR => {
-    Array.from(TR.children).forEach((TD) => {
-        if(TD.textContent == date.getDate()){
-            TD.classList.add('markToday');
-            actualDay = TD.textContent;
-            actualDayTag = TD;
-        }
-    })
-}))
+
+// tbodyTemp.forEach((TR => {
+//     Array.from(TR.children).forEach((TD) => {
+// if(date.getDay() == monthsDays[date.getMonth()].days){
+//     TD.classList.remove('markToday')
+//     TD.classList.add('markTodayEndMonth')
+// } else {
+//     TD.classList.add('markToday');
+//     actualDay = TD.textContent;
+//     actualDayTag = TD;
+//         }
+//     })
+// }));
 
 
 
-// Progress
-let stop = false;
+// MARK MONTHS REVIEWS
+let indexMonth = 0;
 Array.from(document.querySelectorAll('TD')).forEach(TD => {
-    if(stop == false){
-        if(!isNaN(parseInt(TD.textContent)) == true){
-        // console.log(TD.textContent);
+    if (indexMonth < 11) {
+        if (!isNaN(parseInt(TD.textContent)) == true) {
+            if (TD.textContent == monthsDays[indexMonth].days) {
+                TD.classList.add('nextMonthReviews')
+                indexMonth++;
 
-            if(TD == actualDayTag){
-                stop = true;
-            } else {
-                TD.classList.add('markProgress');
-                console.log(TD.textContent)
+                if (TD.classList.contains('nextWeekReviews')) {
+                    TD.classList.remove('nextWeekReviews')
+                }
+
             }
         }
     }
@@ -127,13 +132,82 @@ Array.from(document.querySelectorAll('TD')).forEach(TD => {
 
 
 
-// MARK BEGIN AND FINISH DAY OF EVERY COURSE
-stop = false;
-document.querySelectorAll('TD').forEach((TD) => {
-    if(!isNaN(parseInt(TD.textContent)) == true){
-        if(stop == false){
-            TD.classList.add('basicLevel')
-            stop = true;
+
+// MARK ACTUAL DAY
+tbodyTemp.forEach((TR => {
+    Array.from(TR.children).forEach((TD) => {
+        if (TD.textContent == date.getDate()) {
+            if (date.getDate() == monthsDays[date.getMonth()].days) {
+                if(TD.classList.contains('nextMonthReviews')){
+                    TD.classList.remove('nextMonthReviews')
+                }
+                // nextWeekReviews
+                TD.classList.add('markTodayEndMonth');
+            } else {
+                TD.classList.add('markToday');
+            }
+            actualDay = TD.textContent;
+            actualDayTag = TD;
+        }
+    })
+}))
+
+
+
+
+// Progress && NextWeekReview
+let stop = false;
+let stop2 = false;
+
+Array.from(document.querySelectorAll('TD')).forEach(TD => {
+    if (stop == false) {
+        if (!isNaN(parseInt(TD.textContent)) == true) {
+
+            if (TD == actualDayTag) {
+                stop = true;
+            } else {
+                TD.classList.add('markProgress');
+            }
+
+
+
         }
     }
+
+    // MARK NEXT WEEK REVIEW
+    if (stop == true) {
+        if (stop2 == false) {
+            if (TD.nextElementSibling == null) {
+                if(TD.textContent != monthsDays[date.getMonth()].days){
+                    TD.classList.add('nextWeekReviews')
+                    stop2 = true;
+                }
+            }
+        }
+    }
+
 })
+
+
+
+// MARK BEGIN AND FINISH DAY OF EVERY COURSE
+// ---BEING
+stop = false;
+
+console.log(actualDay)
+
+document.querySelectorAll('TD').forEach((TD) => {
+    if (!isNaN(parseInt(TD.textContent)) == true) {
+        if (stop == false) {
+            TD.classList.add('basicLevelBegin')
+            stop = true;
+        }
+
+    }
+})
+    // ---BEING
+
+
+
+
+
