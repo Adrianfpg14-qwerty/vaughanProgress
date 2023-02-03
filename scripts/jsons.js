@@ -3,12 +3,13 @@ export let englishsLevels = [
         level: "BASICO",
         start: {
             day: 0,
-            month: "JANUARY"
+            month: ""
         },
         finish: {
             day: 0,
             month: ""
-        }
+        },
+        status: "INACTIVE"
     },
     {
         level: "INTERMEDIO",
@@ -19,7 +20,8 @@ export let englishsLevels = [
         finish: {
             day: 0,
             month: ""
-        }
+        },
+        status: "INACTIVE"
     },
     {
         level: "AVANZADO",
@@ -30,7 +32,8 @@ export let englishsLevels = [
         finish: {
             day: 0,
             month: ""
-        }
+        },
+        status: "INACTIVE"
     }
 ];
 
@@ -875,6 +878,7 @@ export let monthsDays = [
 
 
 // (158)
+// (207) LEFT
 export let quotes = [
     "El único modo de hacer un gran trabajo es amar lo que haces - Steve Jobs",
     "Nunca pienso en las consecuencias de fallar un gran tiro… cuando se piensa en las consecuencias se está pensando en un resultado negativo - Michael Jordan",

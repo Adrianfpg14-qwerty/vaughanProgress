@@ -89,13 +89,19 @@
         width: 80%;
     }
 
-    .quote {
+    .divQuote {
         font-family: "Times New Roman", Times, serif;
         font-size: 0.9em;
-
+        
         display: flex;
+        flex-flow: row wrap;
         justify-content: center;
         align-items: center;
+        
+        width: 75%;
+        margin-top: 2px;
+        /* background-color: #2cc8bb; */
+        text-align: center;
     }
 
     /* --------------------------------- ASIDE */
@@ -136,18 +142,30 @@
 
         text-align: center;
         border-radius: 8px;
+    }
+
+    .basic {
         border: 2px solid #b98100;
         background-color: #ffb100;
     }
+    .intermediate {
+        border: 2px solid #4d9d17;
+        background-color: #6cb33c;
+    }
+    .advanced {
+        border: 2px solid rgb(114, 41, 109);
+        background-color: rgb(179, 99, 179);
+    }
+
 
     .currentClass .classProgress {
-        margin-top: 5px;
         width: 80%;
     }
 
     .currentClass .percentaje {
         position: relative;
         top: -3px;
+        font-size: 0.9em;
     }
 
     /* -----------------------------*/
@@ -421,8 +439,14 @@
     /*        MARK DAYS FILTER      */
     /* -----------------------------*/
 
+    /* TODAY */
     .markToday {
         background-color: var(--markToday);
+        border-radius: 15px;
+    }
+    .markTodayWeekReview {
+        background-color: var(--markToday);
+        border: 2px solid var(--markPreviousMonthReview);
         border-radius: 15px;
     }
     .markTodayEndMonth {
@@ -430,6 +454,12 @@
         border: 2px solid var(--markPreviousMonthReview);
         border-radius: 15px;
     }
+    .markTodayEndLevel{
+
+    }
+
+
+    
     .markProgress {
         background-color: var(--markProgress);
         border-radius: 2px;
@@ -437,9 +467,8 @@
 
     /* PREVIOUS */
     .previousWeekReviews {
-        
-        
-        color: #fff;
+        background-color: var(--markNextWeekReview);
+        border-radius: 2px;
     }
     .previousMonthReviews {
         background-color: rgb(150, 106, 150);
