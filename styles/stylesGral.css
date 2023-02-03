@@ -468,10 +468,12 @@
     /* PREVIOUS */
     .previousWeekReviews {
         background-color: var(--markNextWeekReview);
-        border-radius: 2px;
+        /* padding: 2px;  */
+        /* border: 2px solid var(--markProgress); */
     }
     .previousMonthReviews {
         background-color: rgb(150, 106, 150);
+        
     }
 
     /* NEXT */

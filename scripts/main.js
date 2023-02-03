@@ -198,8 +198,8 @@ document.querySelector('.dayOfYear').textContent = currentDay;
 document.querySelector('.yearProgress').value = currentDay;
 
 // QUOTES
-// document.querySelector('.quote').textContent = quotes[currentDay];
-document.querySelector('.quote').textContent = "Las ideas pueden cambiar la vida. A veces a lo único que tienes que abrir la puerta es a una buena idea - Jim Rohn Las ideas pueden cambiar la vida. A veces a lo único que tienes que abrir la puerta es a una buena idea - Jim Rohn as ideas pueden cambiar la ";
+document.querySelector('.quote').textContent = quotes[currentDay];
+// document.querySelector('.quote').textContent = "Las ideas pueden cambiar la vida. A veces a lo único que tienes que abrir la puerta es a una buena idea - Jim Rohn Las ideas pueden cambiar la vida. A veces a lo único que tienes que abrir la puerta es a una buena idea - Jim Rohn as ideas pueden cambiar la ";
 
 
 
