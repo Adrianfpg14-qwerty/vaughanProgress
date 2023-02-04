@@ -75,10 +75,6 @@ document.querySelector('.calendar').append(fragment)
 
 
 
-
-
-
-
 // -------------- MARK DAYS --------------
 // Today
 // let actualDay;
@@ -206,7 +202,7 @@ document.querySelector('.quote').textContent = quotes[currentDay];
 // -----------------------ASIDE
 // TOTAL CANT VIDEOS VIEWED
 // --------------------- [FUNCTION TO CHECK BASED ON DAYS PASSED]
-let totalCantVideosViewed = 51;
+let totalCantVideosViewed = 52;
 let videosViewedByLevel = {
     basicLevelVideosViewed: 0,
     intermediateLevelVideosViewed: 0,
@@ -501,7 +497,7 @@ let actualDay;
 let actualDayTag;
 let monthCaption = Array.from(document.querySelectorAll('caption'))[date.getMonth()];
 let tbodyTemp = Array.from(monthCaption.nextElementSibling.nextElementSibling.children);
-console.log(tbodyTemp);
+// console.log(tbodyTemp);
 
 
 // tbodyTemp.forEach((TR => {
@@ -602,7 +598,7 @@ Array.from(document.querySelectorAll('TD')).forEach(TD => {
 // ---BEING
 stop = false;
 
-console.log(actualDay)
+// console.log(actualDay)
 
 document.querySelectorAll('TD').forEach((TD) => {
     if (!isNaN(parseInt(TD.textContent)) == true) {
@@ -619,3 +615,7 @@ document.querySelectorAll('TD').forEach((TD) => {
 
 
 
+
+
+
+// 
